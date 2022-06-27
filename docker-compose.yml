@@ -1,0 +1,17 @@
+version: '3.7'
+volumes:
+    database:
+
+services:
+    db:
+        image: mariadb:latest
+        container_name: extensions-mariadb
+        ports:
+            - 3306:3306
+        volumes:
+            - database:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=extensions-service
+            - MYSQL_DATABASE=extensions-service
+            - MYSQL_USER=extensions-service
+            - MYSQL_PASSWORD=extensions-service
